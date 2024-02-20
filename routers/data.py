@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from typing import Optional
 from fastapi.responses import JSONResponse, FileResponse
 
+from utils.convert import *
 from utils.data_control import *
 import os
 
@@ -17,8 +18,9 @@ class File_request_payload(BaseModel):
 @data_api.post("/upload/parent_audio/{email}")
 async def upload_audio(file : UploadFile, email):
     content = await file.read()
-    with open(f"parent/{email}.wav", 'wb') as file:
+    with open(f"parent/{email}.aac", 'wb') as file:
         file.write(content)
+    convert_aac2wav(email)
     return "ok"
 
 @data_api.get('/토끼')

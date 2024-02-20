@@ -37,13 +37,13 @@ async def login(data: Login_payload):
 @account.post('/register')
 async def register(data: Register_payload):
     if add_account(data.email, data.password, data.name):
-        add_data(data.email, data.name, data.phoneNumber, data.interests, data.age, data.gender)
+        add_data(data.name, data.email, data.phoneNumber, data.interests, data.age, data.gender)
         return "success"
     return "fail"
 
 @account.post('/update')
 async def update(data: Data_add_payload):
-    if add_data(data.email, data.name, data.phoneNumber, data.interests, data.age, data.gender):
+    if add_data(data.name, data.email, data.phoneNumber, data.interests, data.age, data.gender):
         return "success"
     return "fail"
 

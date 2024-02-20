@@ -23,15 +23,15 @@ back = "172.23.245.219:8000"
 #res = requests.post('http://127.0.0.1:8000/account/update', json = {"id":"aaaa", "name":"김차차돌", "age":6, "gender":"m"})
 
 res = requests.post(f'http://{back}/account/login', json={
-  "email": "asd",
-  "password": "asd"
+  "email": "aaaa",
+  "password": "bbbb"
 })
 print(res.json())
 
 res = requests.post(f'http://{back}/account/register', json={
-  "email": "asd",
+  "email": "123",
   "password": "asd",
-  "name" : "김차돌2",
+  "name" : "김차돌123",
   "phoneNumber" : "01012394120",
   "age" : "5",
   "gender" : "men",
@@ -50,9 +50,9 @@ print(res.json())
 res = requests.get(f'http://{back}/account/get/aaaa')
 print(res.json())
 
-#res = requests.post('http://172.23.245.219:8000/api/tts', json = {"id":"aaaa","text":"너무 피곤하고 졸리다", "role":'나레이션'}).json()
-#print(res['status'])
-#winsound.PlaySound(base64.b64decode(res['data']), winsound.SND_MEMORY)
+#res = requests.post('http://172.23.245.219:8000/api/tts', json = {"email":"123","text":"너무 피곤하고 졸리다", "role":'나레이션'})
+#print(res)
+#winsound.PlaySound(res.content, winsound.SND_MEMORY)
 
 #res = requests.post('http://127.0.0.1:8000/data/get', json = {"id":"a1", "type":"audio", "book":"토끼와 거북이", "file":"토끼"})
 #print(res.content)

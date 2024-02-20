@@ -66,11 +66,9 @@ def book_json(book):
 
 def login_check(email, password): # 로그인 검증
     data = get_json()
-    
-    if id in data:
+    if email in data:
         if data[email]["pw"] == password:
             return True
-    
     return False
 
 def add_account(email, password, name): #  계정 추가
@@ -95,7 +93,7 @@ def add_account(email, password, name): #  계정 추가
 def add_data(name, email, phoneNumber, interests, age, gender):
     data = get_json()
 
-    if not id in data:
+    if not email in data:
         return False
     data[email]={
             "pw" : data[email]["pw"],

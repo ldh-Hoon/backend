@@ -23,13 +23,13 @@ def mic_input():
         return audio.get_wav_data()
 
 book = "토끼와 거북이"
-role = "토끼"
-id = "a1"
+role = "a"
+email = "a1"
 
 #res = requests.post(f'http://{back}/api/tts/prepare', json = {"id":id, "book":book})
 #print(res.json())
 
-res = requests.post(f'http://{back}/data/get/file', json = {"id":id, "type":"json", "book":book,})
+res = requests.post(f'http://{back}/data/get/file', json = {"email":email, "type":"json", "book":book,})
 data = res.content.decode('utf8').replace("'", '"')
 book_data = json.loads(data)
 
