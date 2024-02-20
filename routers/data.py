@@ -39,6 +39,7 @@ async def return_file(payload : File_request_payload):
             return "fail"
         return FileResponse(filepath)
     
+    
     elif payload.type == "image" and payload.book != None and payload.file != None:
         
         filepath = os.path.join("./books", payload.book, "img",f"{payload.file}.png")
