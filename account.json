@@ -1,0 +1,35 @@
+{
+	"aaaa": {
+		"pw": "bbbb",
+		"info": {
+			"name": "김차돌",
+			"phoneNumber": null,
+			"age": null,
+			"gender": null,
+			"interests": null,
+			"history": null
+		}
+	},
+	"asd": {
+		"pw": "asd",
+		"info": {
+			"name": "김차돌2",
+			"phoneNumber": null,
+			"age": null,
+			"gender": null,
+			"interests": null,
+			"history": null
+		}
+	},
+	"a@naver.com": {
+		"pw": "1",
+		"info": {
+			"name": "a",
+			"phoneNumber": null,
+			"age": null,
+			"gender": null,
+			"interests": null,
+			"history": null
+		}
+	}
+}
