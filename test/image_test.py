@@ -6,8 +6,8 @@ import librosa
 import os
 import json
 import winsound
+
 import speech_recognition as sr
-import time
 
 back = "172.23.245.219:8000"
 
@@ -27,24 +27,20 @@ book = "토끼와 거북이"
 role = "."
 email = "a1"
 
-res = requests.post(f'http://{back}/api/tts/prepare', json = {"email":email, "book":book})
-print(res.content)
+#res = requests.post(f'http://{back}/api/tts/prepare', json = {"email":email, "book":book})
+#print(res.content)
 
-res = requests.post(f'http://{back}/data/get/file', json = {"email":email, "type":"json", "book":book})
+res = requests.post(f'http://{back}/data/get/file', json = {"email":email, "type":"json", "book":book,})
 data = res.content.decode('utf8').replace("'", '"')
 book_data = json.loads(data)
 
 
-time.sleep(10)
-
 for scene in book_data['script']:
     now_scene = scene['id']
     print(f"{scene['role']} : {scene['text']}")
-    
+
     if role == scene['role']:
-
         audio = mic_input()
-
 
     else:
         winsound.PlaySound(open(f"books/{book}/voices/{now_scene}.wav", "rb").read(), winsound.SND_MEMORY)

@@ -23,9 +23,9 @@ async def upload_audio(file : UploadFile, email):
     convert_aac2wav(email)
     return "ok"
 
-@data_api.get('/토끼')
-async def show():
-    return FileResponse("books/토끼와 거북이/img/토끼.png")
+@data_api.get('/{book}/{filename}')
+async def show(book, filename):
+    return FileResponse(f"books/{book}/img/{filename}.png")
 
 @data_api.get('/booklist')
 async def booklist():

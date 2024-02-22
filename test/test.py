@@ -29,9 +29,9 @@ res = requests.post(f'http://{back}/account/login', json={
 print(res.json())
 
 res = requests.post(f'http://{back}/account/register', json={
-  "email": "123",
+  "email": "a1",
   "password": "asd",
-  "name" : "김차돌123",
+  "name" : "aaa1",
   "phoneNumber" : "01012394120",
   "age" : "5",
   "gender" : "men",
@@ -47,7 +47,7 @@ res = requests.post(f'http://{back}/account/login', json={
 })
 print(res.json())
 
-res = requests.get(f'http://{back}/account/get/aaaa')
+res = requests.get(f'http://{back}/account/get/su@gmail.com')
 print(res.json())
 
 #res = requests.post('http://172.23.245.219:8000/api/tts', json = {"email":"123","text":"너무 피곤하고 졸리다", "role":'나레이션'})

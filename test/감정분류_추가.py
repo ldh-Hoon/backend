@@ -35,6 +35,7 @@ data = res.content.decode('utf8').replace("'", '"')
 book_data = json.loads(data)
 
 
+
 for scene in book_data['script']:
     now_scene = scene['id']
     print(f"{scene['role']} : {scene['text']}")

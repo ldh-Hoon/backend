@@ -3,6 +3,8 @@ from typing import Optional
 from fastapi import FastAPI
 from pydantic import BaseModel
 from utils.data_control import *
+from fastapi.responses import JSONResponse, FileResponse
+
 
 class Login_payload(BaseModel):
     email: str
@@ -51,5 +53,7 @@ async def update(data: Data_add_payload):
 async def get_data(user):
     data = get_json()
     if user in data:
-        return data[user]['info']
+        return JSONResponse(data[user]['info'])
     return "fail"
+
+
