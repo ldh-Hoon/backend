@@ -1,3 +1,1 @@
-TTS_ENDPOINT = "http://221.163.126.230:8501/tts"
 
-RVC_ENDPOINT = "http://124.62.22.104:5002"
